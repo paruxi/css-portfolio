@@ -23,6 +23,7 @@ body{
 *{
     margin:0px;
     padding:0px;
+    box-sizing: border-box;
 }
 
 .nav{
@@ -65,7 +66,7 @@ body{
 height: 30px;
 width: 89px;
 }
-@media (min-width: 200px) and (max-width: 1000px) {
+@media (max-width: 1000px) {
     .navLink {
         display: none;
     }
@@ -107,14 +108,15 @@ width: 89px;
     min-height: 100%;
     position: absolute;
     z-index: -5;
-}   
+} 
+/* ---------------------------------------------------------------Home page-------------------------------------------------------------------------------   */
 .hero {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items:center;
     width: 100vw;
-    padding: 64px;
+    padding: 80px;
 }
 
 
@@ -124,8 +126,9 @@ width: 89px;
     padding: 14px;
 }
 
+
 .videoFrame {
-  width: clamp(10px ,20rem ,300px);
+  width: clamp(10px ,30vw ,320px);
   aspect-ratio: 1/1;   /* or set height */
   overflow: hidden;       /* crops zoomed video */
   border-radius: 70px;     /* optional */
@@ -156,7 +159,6 @@ width: 89px;
         align-items: center;
     }
     
-    .videoFrame {
-        
-    }
 }
+/* -------------------------------------------------------------------------------------Works------------------------------------------------------------------------------------------------------------------   */
+
