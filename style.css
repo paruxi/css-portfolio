@@ -1,0 +1,162 @@
+@font-face {
+    font-family:"SpaceGrotesk";
+    src: url(Space_Grotesk/static/SpaceGrotesk-Regular.ttf);
+    src: url(Space_Grotesk/static/SpaceGrotesk-Bold.ttf);
+    src: url(Space_Grotesk/static/SpaceGrotesk-Medium.ttf);
+    src: url(Space_Grotesk/static/SpaceGrotesk-Light.ttf);
+    src: url(Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf);
+}
+
+:root{
+    --color-text-main: #0A0A0A;
+    --color-text-secondary: #F7E8D4;
+    --color-background: #F7E8D4;
+    --color-background-black: #0A0A0A;
+    --color-secondary: #E8A87A;
+    --color-tertiary: #C4D9C4;
+}
+
+body{
+    font-family: "spaceGrotesk";
+}
+
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.nav{
+    position: sticky;
+    top: 0;
+    display: flex;
+    direction: row;
+    gap: 3rem ; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-background-black);
+    padding: 8px;
+    z-index: 100;
+}
+.menuButton {
+    display: none;
+}
+
+.leftSide{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-left: 64px;
+}
+
+.rightSide{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding-right: 64px;
+}
+
+.navLink {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    text-decoration: none; 
+}
+
+.logo {
+height: 30px;
+width: 89px;
+}
+@media (min-width: 200px) and (max-width: 1000px) {
+    .navLink {
+        display: none;
+    }
+    .nav {
+        align-items: flex-start;
+        width:100%;
+        padding: 10px;
+        
+    }
+    .rightSide {
+        display: none;
+    }
+    .leftSide {
+        display: none;
+    }
+    .menuButton {
+        display: block;
+        height: 32px;
+        width: 32px;
+    }
+    .logo {
+       height: 25px;
+       width: 84px;
+}
+
+}
+/* ---------------------------------------------------------- Nav ---------------------------------------------------- */
+.main {
+    display: flex;
+    direction: column;
+    align-items: flex-start;
+    min-height: 100dvh;    /*<----- this was needed to have the nav bar sticky to the end of page */
+}
+
+.backgroundImage{
+    overflow: clip;
+    object-fit: cover;
+    width: 100vw;
+    min-height: 100%;
+    position: absolute;
+    z-index: -5;
+}   
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    width: 100vw;
+    padding: 64px;
+}
+
+
+.heroText {
+    position: static;
+    font-size:clamp(4rem, 12vw, 12rem) ;
+    padding: 14px;
+}
+
+.videoFrame {
+  width: clamp(10px ,20rem ,300px);
+  aspect-ratio: 1/1;   /* or set height */
+  overflow: hidden;       /* crops zoomed video */
+  border-radius: 70px;     /* optional */
+}
+
+
+.videoFrame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                 /* fill frame, no stretch */
+  object-position: 30% 50%;          /* which part visible: x y */
+  transform: scale(1.5);             /* zoom */
+  transform-origin: 30% 50%;         /* zoom toward this point */
+}
+
+@media (min-width: 200px) and (max-width: 1000px) { 
+    .hero{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    width: 100vw;
+    padding: 64px;
+    }
+
+    .heroText {
+        align-items: center;
+    }
+    
+    .videoFrame {
+        
+    }
+}
